@@ -7,7 +7,7 @@ global:
 alerting:
   alertmanagers:
     - static_configs:
-        - targets: ["192.168.33.10:9093"]
+        - targets: ["10.1.66.145:9093"]
 
 # Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
 rule_files:
@@ -21,22 +21,22 @@ scrape_configs:
     scrape_interval: 5s 
     scrape_timeout: 5s
     static_configs:
-      - targets: ["192.168.33.10:9090"]
+      - targets: ["10.1.66.145:9090"]
       
   - job_name: node
     static_configs:
-      - targets: ["192.168.33.10:9100"]
-      - targets: ["192.168.33.20:9100"]
-      - targets: ["192.168.33.30:9100"]
-      - targets: ["192.168.33.40:9100"]
-      - targets: ["10.10.66.115:9100"]
+      - targets: ["10.1.66.178:9182"]
+      - targets: ["10.1.67.121:9182"]
       - targets: ["10.1.66.62:9182"]
+      - targets: ["10.1.66.178:9182"]
+      - targets: ["10.1.66.90:9182"]
+      - targets: ["10.1.66.190:9182"]
 
   - job_name: alertmanager
     static_configs:
-      - targets: ["192.168.33.10:9093"]
+      - targets: ["10.1.66.145:9093"]
   
   - job_name: cadvisor
     scrape_interval: 5s
     static_configs:
-      - targets: ["192.168.33.10:8080"]
+      - targets: ["10.1.66.145:8080"]
