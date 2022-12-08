@@ -26,6 +26,8 @@ scrape_configs:
   - job_name: node
     static_configs:
       - targets: ["10.1.66.178:9182"]
+        labels:
+        instance: 'jenkins-Win10-build-node02'
       - targets: ["10.1.67.121:9182"]
       - targets: ["10.1.66.62:9182"]
       - targets: ["10.1.66.178:9182"]
